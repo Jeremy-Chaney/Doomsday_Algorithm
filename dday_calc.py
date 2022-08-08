@@ -10,6 +10,13 @@ import subprocess
 # similar to how you'd actually use it IRL
 CHECK_YEAR = 0
 
+# Setting this to one will give you the doomsday for the
+# given year. Use this to practice the last step of the
+# Doomsday algorithm
+GIVE_YEAR_DDAY = 1
+
+# always refer to the days of the week as the index from
+# this list.
 DOW_List = [
     "Sunday",
     "Monday",
@@ -52,6 +59,40 @@ Usage : this tool is a quizing program to help learn and
         the desired day. Change to 0 if you want to skip the
         intermediate calculation and solve all the way for the date
         in your head.
+
+        By default the GIVE_YEAR_DDAY is 0. Setting this to 1 will
+        allow you to skip to the final step of the doomsday algorithm
+        Where you just need to work out the month/day and add to
+        the year's doomsday.
+
+        Important doomsdays for each month and how to remember them:
+        January     -> 3rd  (on non-leap years)
+                    -> 4th  (on leap years)
+        February    -> 14th (on non-leap years, Valentines Day)
+                    -> 28th (on non-leap years)
+                    -> 29th (on leap years)
+        March       -> 14th (Pi day)
+        April       -> 4th  (4/4)
+        May         -> 9th  (work 9-5)
+        June        -> 6th  (6/6, also the actual D-Day in 1944)
+        July        -> 4th  (4th of July)
+                    -> 11th (7eleven)
+        August      -> 8th  (8/8)
+        September   -> 5th  (work 9-5)
+        October     -> 10th (10/10)
+                    -> 31st (Halloween)
+        November    -> 7th  (7eleven)
+        December    -> 12th (12/12)
+                    -> 26th (Boxing day)
+
+        Always input you values as integers between 0 and 6:
+        0 = Sunday      (NONE-day)
+        1 = Monday      (One-day)
+        2 = Tuesday     (Two-day)
+        3 = Wednesday   (THREES-day)
+        4 = Thursday    (FOURS-day)
+        5 = Friday      (FIVE-day)
+        6 = Saturday    (SIX-a-day)
 """
 
 # define our clear function
@@ -178,6 +219,10 @@ def main():
             print(str(cent_dday + year_last2_dday) + " % 7 = " + str(year_dday) + " -> " + DOW_List[year_dday])
 
         print("The Doomsday of " + year + " is " + DOW_List[year_dday])
+    elif GIVE_YEAR_DDAY == 1:
+        print("The Doomsday of " + year + " is " + DOW_List[year_dday])
+    else:
+        _ = 1
 
     guess_val = input("What day of the week is the day " + month_str + " " + str(day) + ", " + year + "? ")
 
