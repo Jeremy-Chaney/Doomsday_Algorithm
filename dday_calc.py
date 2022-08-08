@@ -8,7 +8,7 @@ import subprocess
 # setting this to zero will eliminate the intermediate
 # check for the doomsday of the year. This would be more
 # similar to how you'd actually use it IRL
-CHECK_YEAR = 1
+CHECK_YEAR = 0
 
 DOW_List = [
     "Sunday",
@@ -179,7 +179,7 @@ def main():
 
         print("The Doomsday of " + year + " is " + DOW_List[year_dday])
 
-    guess_val = input("What is the Doomsday for the day " + month_str + " " + str(day) + ", " + year + "? ")
+    guess_val = input("What day of the week is the day " + month_str + " " + str(day) + ", " + year + "? ")
 
     doomsday = get_day_of_week(year_dday, month, day, int(year))
 
