@@ -8,12 +8,12 @@ import subprocess
 # setting this to zero will eliminate the intermediate
 # check for the doomsday of the year. This would be more
 # similar to how you'd actually use it IRL
-CHECK_YEAR = 0
+CHECK_YEAR = 1
 
 # Setting this to one will give you the doomsday for the
 # given year. Use this to practice the last step of the
 # Doomsday algorithm
-GIVE_YEAR_DDAY = 1
+GIVE_YEAR_DDAY = 0
 
 # always refer to the days of the week as the index from
 # this list.
